@@ -34,7 +34,7 @@ class CmsContentDump extends Command
     protected function configure()
     {
         $this->setName('cms:dump');
-        $this->setDescription('Dump all CMS pages and blocks in var/cms-output');
+        $this->setDescription('Dump all CMS pages and blocks in app/design/frontend/Aonach/hyva/web/cms-output');
     }
 
     /**
@@ -48,7 +48,7 @@ class CmsContentDump extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output): void
     {
-        $output->writeln('Dumping CMS content to var/cms-output');
+        $output->writeln('Dumping CMS content to app/design/frontend/Aonach/hyva/web/cms-output');
         $this->dumpCmsContent->execute();
     }
 }

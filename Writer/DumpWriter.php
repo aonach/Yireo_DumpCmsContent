@@ -39,8 +39,9 @@ class DumpWriter
      */
     public function writeContent(string $id, string $content)
     {
-        $varDirectory = $this->filesystem->getDirectoryWrite(DirectoryList::VAR_DIR);
-        $path = $this->directoryList->getPath('var');
-        $varDirectory->writeFile($path.'/cms-output/'.$id.'.html', $content);
+        $appDirectory = $this->filesystem->getDirectoryWrite(DirectoryList::APP);
+        $path = $this->directoryList->getPath('app');
+        $theme_dir = '/design/frontend/Aonach/hyva/web'; // Point it to the usual Aonach/hyva theme
+        $appDirectory->writeFile($path.$theme_dir.'/cms-output/'.$id.'.html', $content);
     }
 }
