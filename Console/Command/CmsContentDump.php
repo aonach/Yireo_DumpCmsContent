@@ -43,12 +43,14 @@ class CmsContentDump extends Command
      * @param InputInterface $input
      * @param OutputInterface $output
      *
-     * @return void
+     * @return int
      * @throws FileSystemException
      */
-    protected function execute(InputInterface $input, OutputInterface $output): void
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln('Dumping CMS content to app/design/frontend/Aonach/hyva/web/cms-output');
         $this->dumpCmsContent->execute();
+
+        return \Magento\Framework\Console\Cli::RETURN_SUCCESS;
     }
 }
